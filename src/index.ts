@@ -40,7 +40,7 @@ export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
                 'codeconnections:DeleteHost',
               ],
               resources: [
-                `arn:aws:codeconnections:${region}:${account}:host/*`,
+                `arn:aws:codeconnections:${region}:${account}:*`,
               ],
             }),
           ],
