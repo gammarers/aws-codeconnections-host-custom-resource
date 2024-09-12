@@ -9,14 +9,14 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: '@gammarers/aws-codeconnections-host-custom-resource',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/gammarers/aws-codeconnections-host-custom-resource.git',
-  releaseToNpm: false, // todo: turn true
+  releaseToNpm: true,
   npmAccess: javascript.NpmAccess.PUBLIC,
   minNodeVersion: '18.0.0',
   workflowNodeVersion: '22.4.x',
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
-      schedule: javascript.UpgradeDependenciesSchedule.expressions(['0 16 * * ?']),
+      schedule: javascript.UpgradeDependenciesSchedule.expressions(['8 16 * * 2']),
     },
   },
   autoApproveOptions: {
