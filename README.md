@@ -1,5 +1,12 @@
 # AWS CodeConnections Host Custom Resource
 
+[![GitHub](https://img.shields.io/github/license/gammarers/aws-codeconnections-host-custom-resource?style=flat-square)](https://github.com/gammarers/aws-codeconnections-host-custom-resource/blob/main/LICENSE)
+[![npm (scoped)](https://img.shields.io/npm/v/@gammarers/aws-codeconnections-host-custom-resource?style=flat-square)](https://www.npmjs.com/package/@gammarers/aws-codeconnections-host-custom-resource)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/gammarers/aws-codeconnections-host-custom-resource/release.yml?branch=main&label=release&style=flat-square)](https://github.com/gammarers/aws-codeconnections-host-custom-resource/actions/workflows/release.yml)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/gammarers/aws-codeconnections-host-custom-resource?sort=semver&style=flat-square)](https://github.com/gammarers/aws-codeconnections-host-custom-resource/releases)
+
+[![View on Construct Hub](https://constructs.dev/badge?package=@gammarers/aws-codeconnections-host-custom-resource)](https://constructs.dev/packages/@gammarers/aws-codeconnections-host-custom-resource)
+
 This AWS CDK Construct provides a custom resource (Lambda Function) to create a connection host for Self-Managed GitLab, which is not yet supported by CloudFormation. Additionally, even after creating the Host and the connection, authentication must be done via a browser.
 
 ## Install
