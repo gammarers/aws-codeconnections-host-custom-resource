@@ -4,10 +4,19 @@ import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cr from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
 
+// Bitbucket | GitHub | GitHubEnterpriseServer | GitLab | GitLabSelfManaged
+export enum CodeConnectionsHostProviderType {
+  BIT_BUCKET = 'Bitbucket',
+  GIT_HUB = 'GitHub',
+  GIT_HUB_ENTERPRISE_SERVER = 'GitHubEnterpriseServer',
+  GIT_LAB = 'GitLab',
+  GIT_LAB_SELF_MANAGED = 'GitLabSelfManaged',
+}
+
 export interface CodeConnectionsHostCustomResourceProps {
   readonly name: string;
   readonly providerEndpoint: string;
-  readonly providerType: string;
+  readonly providerType: CodeConnectionsHostProviderType;
 }
 
 export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {

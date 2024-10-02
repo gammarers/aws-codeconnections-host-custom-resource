@@ -32,23 +32,6 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
       },
       "Type": "AWS::Lambda::Function",
     },
-    "CodeConnectionsHostCustomResourceA0D203C1": {
-      "DeletionPolicy": "Delete",
-      "Properties": {
-        "Create": "{"service":"CodeConnections","action":"createHost","parameters":{"Name":"gitlab.example.com","ProviderEndpoint":"https://gitlab.example.com","ProviderType":"GitLabSelfManaged"},"physicalResourceId":{"responsePath":"HostArn"}}",
-        "Delete": "{"service":"CodeConnections","action":"deleteHost","parameters":{"HostArn":"PHYSICAL:RESOURCEID:"}}",
-        "InstallLatestAwsSdk": true,
-        "ServiceToken": {
-          "Fn::GetAtt": [
-            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
-            "Arn",
-          ],
-        },
-        "Update": "{"service":"CodeConnections","action":"updateHost","parameters":{"HostArn":"PHYSICAL:RESOURCEID:","ProviderEndpoint":"https://gitlab.example.com"}}",
-      },
-      "Type": "Custom::AWS",
-      "UpdateReplacePolicy": "Delete",
-    },
     "FunctionRole111A5701": {
       "Properties": {
         "AssumeRolePolicyDocument": {
@@ -100,6 +83,23 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
         "RoleName": "custom-resource-codeconnection-host-eadb0d58-func-exc-role",
       },
       "Type": "AWS::IAM::Role",
+    },
+    "GitHibEnterpriseCodeConnectionsHostCustomResource3C231391": {
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "Create": "{"service":"CodeConnections","action":"createHost","parameters":{"Name":"github.example.com","ProviderEndpoint":"https://github.example.com","ProviderType":"GitHubEnterpriseServer"},"physicalResourceId":{"responsePath":"HostArn"}}",
+        "Delete": "{"service":"CodeConnections","action":"deleteHost","parameters":{"HostArn":"PHYSICAL:RESOURCEID:"}}",
+        "InstallLatestAwsSdk": true,
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "Arn",
+          ],
+        },
+        "Update": "{"service":"CodeConnections","action":"updateHost","parameters":{"HostArn":"PHYSICAL:RESOURCEID:","ProviderEndpoint":"https://github.example.com"}}",
+      },
+      "Type": "Custom::AWS",
+      "UpdateReplacePolicy": "Delete",
     },
   },
   "Rules": {

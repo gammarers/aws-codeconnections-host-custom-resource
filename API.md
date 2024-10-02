@@ -200,7 +200,7 @@ const codeConnectionsHostCustomResourceProps: CodeConnectionsHostCustomResourceP
 | --- | --- | --- |
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.providerEndpoint">providerEndpoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.providerType">providerType</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.providerType">providerType</a></code> | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType">CodeConnectionsHostProviderType</a></code> | *No description.* |
 
 ---
 
@@ -227,12 +227,52 @@ public readonly providerEndpoint: string;
 ##### `providerType`<sup>Required</sup> <a name="providerType" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.providerType"></a>
 
 ```typescript
-public readonly providerType: string;
+public readonly providerType: CodeConnectionsHostProviderType;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType">CodeConnectionsHostProviderType</a>
 
 ---
 
 
+
+## Enums <a name="Enums" id="Enums"></a>
+
+### CodeConnectionsHostProviderType <a name="CodeConnectionsHostProviderType" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.BIT_BUCKET">BIT_BUCKET</a></code> | *No description.* |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.GIT_HUB">GIT_HUB</a></code> | *No description.* |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.GIT_HUB_ENTERPRISE_SERVER">GIT_HUB_ENTERPRISE_SERVER</a></code> | *No description.* |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.GIT_LAB">GIT_LAB</a></code> | *No description.* |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.GIT_LAB_SELF_MANAGED">GIT_LAB_SELF_MANAGED</a></code> | *No description.* |
+
+---
+
+##### `BIT_BUCKET` <a name="BIT_BUCKET" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.BIT_BUCKET"></a>
+
+---
+
+
+##### `GIT_HUB` <a name="GIT_HUB" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.GIT_HUB"></a>
+
+---
+
+
+##### `GIT_HUB_ENTERPRISE_SERVER` <a name="GIT_HUB_ENTERPRISE_SERVER" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.GIT_HUB_ENTERPRISE_SERVER"></a>
+
+---
+
+
+##### `GIT_LAB` <a name="GIT_LAB" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.GIT_LAB"></a>
+
+---
+
+
+##### `GIT_LAB_SELF_MANAGED` <a name="GIT_LAB_SELF_MANAGED" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.GIT_LAB_SELF_MANAGED"></a>
+
+---
 

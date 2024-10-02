@@ -1,7 +1,7 @@
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import { AwsCustomResource } from 'aws-cdk-lib/custom-resources';
-import { CodeConnectionsHostCustomResource } from '../src';
+import { CodeConnectionsHostCustomResource, CodeConnectionsHostProviderType } from '../src';
 
 describe('CustomResource Testing', () => {
 
@@ -13,16 +13,16 @@ describe('CustomResource Testing', () => {
     },
   });
 
-  const cr = new CodeConnectionsHostCustomResource(stack, 'CodeConnectionsHostCustomResource', {
+  const gitLabConnectionHostCustomResource = new CodeConnectionsHostCustomResource(stack, 'GitLabCodeConnectionsHostCustomResource', {
     name: 'gitlab.example.com',
     providerEndpoint: 'https://gitlab.example.com',
-    providerType: 'GitLabSelfManaged',
+    providerType: CodeConnectionsHostProviderType.GIT_LAB,
   });
 
   const template = Template.fromStack(stack);
 
-  it('Is CustomResource', () => {
-    expect(cr).toBeInstanceOf(AwsCustomResource);
+  it('Is GitLab Connection Host CustomResource', () => {
+    expect(gitLabConnectionHostCustomResource).toBeInstanceOf(AwsCustomResource);
   });
 
   it('Should match snapshot', () => {
