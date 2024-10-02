@@ -6,11 +6,11 @@ import { Construct } from 'constructs';
 
 // Bitbucket | GitHub | GitHubEnterpriseServer | GitLab | GitLabSelfManaged
 export enum CodeConnectionsHostProviderType {
-  Bitbucket = 'Bitbucket',
-  GitHub = 'GitHub',
-  GitHubEnterpriseServer = 'GitHubEnterpriseServer',
-  GitLab = 'GitLab',
-  GitLabSelfManaged = 'GitLabSelfManaged',
+  BIT_BUCKET = 'Bitbucket',
+  GIT_HUB = 'GitHub',
+  GIT_HUB_ENTERPRISE_SERVER = 'GitHubEnterpriseServer',
+  GIT_LAB = 'GitLab',
+  GIT_LAB_SELF_MANAGED = 'GitLabSelfManaged',
 }
 
 export interface CodeConnectionsHostCustomResourceProps {

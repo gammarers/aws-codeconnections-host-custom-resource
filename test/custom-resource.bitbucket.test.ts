@@ -16,7 +16,7 @@ describe('CustomResource Testing', () => {
   const bitbucketConnectionHostCustomResource = new CodeConnectionsHostCustomResource(stack, 'BitBucketCodeConnectionsHostCustomResource', {
     name: 'bitbucket.example.com',
     providerEndpoint: 'https://bitbucket.example.com',
-    providerType: CodeConnectionsHostProviderType.Bitbucket,
+    providerType: CodeConnectionsHostProviderType.BIT_BUCKET,
   });
 
   const template = Template.fromStack(stack);

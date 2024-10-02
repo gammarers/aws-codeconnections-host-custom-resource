@@ -16,7 +16,7 @@ describe('CustomResource Testing', () => {
   const gitHubEnterpriseConnectionHostCustomResource = new CodeConnectionsHostCustomResource(stack, 'GitHibEnterpriseCodeConnectionsHostCustomResource', {
     name: 'github.example.com',
     providerEndpoint: 'https://github.example.com',
-    providerType: CodeConnectionsHostProviderType.GitHubEnterpriseServer,
+    providerType: CodeConnectionsHostProviderType.GIT_HUB_ENTERPRISE_SERVER,
   });
 
   const template = Template.fromStack(stack);

@@ -16,7 +16,7 @@ describe('CustomResource Testing', () => {
   const gitLabConnectionHostCustomResource = new CodeConnectionsHostCustomResource(stack, 'GitLabCodeConnectionsHostCustomResource', {
     name: 'gitlab.example.com',
     providerEndpoint: 'https://gitlab.example.com',
-    providerType: CodeConnectionsHostProviderType.GitLabSelfManaged,
+    providerType: CodeConnectionsHostProviderType.GIT_LAB,
   });
 
   const template = Template.fromStack(stack);
