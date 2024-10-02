@@ -87,7 +87,7 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
     "GitLabCodeConnectionsHostCustomResource84EEAEED": {
       "DeletionPolicy": "Delete",
       "Properties": {
-        "Create": "{"service":"CodeConnections","action":"createHost","parameters":{"Name":"gitlab.example.com","ProviderEndpoint":"https://gitlab.example.com","ProviderType":"GitLabSelfManaged"},"physicalResourceId":{"responsePath":"HostArn"}}",
+        "Create": "{"service":"CodeConnections","action":"createHost","parameters":{"Name":"gitlab.example.com","ProviderEndpoint":"https://gitlab.example.com","ProviderType":"GitLab"},"physicalResourceId":{"responsePath":"HostArn"}}",
         "Delete": "{"service":"CodeConnections","action":"deleteHost","parameters":{"HostArn":"PHYSICAL:RESOURCEID:"}}",
         "InstallLatestAwsSdk": true,
         "ServiceToken": {
