@@ -28,12 +28,12 @@ yarn add @gammarers/aws-codeconnections-host-custom-resource
 ## Example
 
 ```typescript
-import { RDSDatabaseAutoRunningStopStack } from '@gammarers/aws-codeconnections-host-custom-resource';
+import { RDSDatabaseAutoRunningStopStack, CodeConnectionsHostProviderType } from '@gammarers/aws-codeconnections-host-custom-resource';
 
 const codeConnectionsHostCustomResource = new CodeConnectionsHostCustomResource(this, 'CodeConnectionsHost', {
   name: 'gitlab.example.com', // required, connection host name (Minimum length of 1. Maximum length of 64.)
   providerEndpoint: 'https://gitlab.example.com', // required, your provider endpoint (Minimum length of 1. Maximum length of 512.)
-  providerType: 'GitLabSelfManaged', // required, Bitbucket | GitHub | GitHubEnterpriseServer | GitLab | GitLabSelfManaged
+  providerType: CodeConnectionsHostProviderType.GIT_LAB_SELF_MANAGED,
 });
 
 // get host arn
