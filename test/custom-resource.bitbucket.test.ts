@@ -1,5 +1,6 @@
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
+import * as codeconnections from 'aws-cdk-lib/aws-codeconnections';
 import { AwsCustomResource } from 'aws-cdk-lib/custom-resources';
 import { CodeConnectionsHostCustomResource, CodeConnectionsHostProviderType } from '../src';
 
@@ -17,6 +18,13 @@ describe('CustomResource Testing', () => {
     name: 'bitbucket.example.com',
     providerEndpoint: 'https://bitbucket.example.com',
     providerType: CodeConnectionsHostProviderType.BIT_BUCKET,
+  });
+
+  const hostArn = bitbucketConnectionHostCustomResource.findHostArn();
+
+  new codeconnections.CfnConnection(stack, 'Connection', {
+    connectionName: 'example-bitbucket-connection',
+    hostArn,
   });
 
   const template = Template.fromStack(stack);

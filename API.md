@@ -45,6 +45,7 @@ new CodeConnectionsHostCustomResource(scope: Construct, id: string, props: CodeC
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResource.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResource.getResponseField">getResponseField</a></code> | Returns response data for the AWS SDK call as string. |
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResource.getResponseFieldReference">getResponseFieldReference</a></code> | Returns response data for the AWS SDK call. |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResource.findHostArn">findHostArn</a></code> | *No description.* |
 
 ---
 
@@ -102,6 +103,12 @@ the response data might not exist, and will cause a CloudFormation deploy time e
 the path to the data.
 
 ---
+
+##### `findHostArn` <a name="findHostArn" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResource.findHostArn"></a>
+
+```typescript
+public findHostArn(): string
+```
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -273,6 +280,21 @@ public readonly providerType: CodeConnectionsHostProviderType;
 
 
 ##### `GIT_LAB_SELF_MANAGED` <a name="GIT_LAB_SELF_MANAGED" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType.GIT_LAB_SELF_MANAGED"></a>
+
+---
+
+
+### ResponseField <a name="ResponseField" id="@gammarers/aws-codeconnections-host-custom-resource.ResponseField"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.ResponseField.HOST_ARN">HOST_ARN</a></code> | *No description.* |
+
+---
+
+##### `HOST_ARN` <a name="HOST_ARN" id="@gammarers/aws-codeconnections-host-custom-resource.ResponseField.HOST_ARN"></a>
 
 ---
 

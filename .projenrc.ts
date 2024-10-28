@@ -2,7 +2,7 @@ import { awscdk, javascript } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'yicr',
   authorAddress: 'yicr@users.noreply.github.com',
-  cdkVersion: '2.100.0',
+  cdkVersion: '2.145.0',
   defaultReleaseBranch: 'main',
   typescriptVersion: '5.5.x',
   jsiiVersion: '5.5.x',

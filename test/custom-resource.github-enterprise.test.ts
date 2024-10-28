@@ -1,5 +1,6 @@
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
+import * as codeconnections from 'aws-cdk-lib/aws-codeconnections';
 import { AwsCustomResource } from 'aws-cdk-lib/custom-resources';
 import { CodeConnectionsHostCustomResource, CodeConnectionsHostProviderType } from '../src';
 
@@ -17,6 +18,13 @@ describe('CustomResource Testing', () => {
     name: 'github.example.com',
     providerEndpoint: 'https://github.example.com',
     providerType: CodeConnectionsHostProviderType.GIT_HUB_ENTERPRISE_SERVER,
+  });
+
+  const hostArn = gitHubEnterpriseConnectionHostCustomResource.findHostArn();
+
+  new codeconnections.CfnConnection(stack, 'Connection', {
+    connectionName: 'example-github-enterprise-connection',
+    hostArn,
   });
 
   const template = Template.fromStack(stack);
