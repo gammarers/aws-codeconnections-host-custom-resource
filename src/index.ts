@@ -13,6 +13,10 @@ export enum CodeConnectionsHostProviderType {
   GIT_LAB_SELF_MANAGED = 'GitLabSelfManaged',
 }
 
+export enum ResponseField {
+  HostArn = 'HostArn',
+}
+
 export interface CodeConnectionsHostCustomResourceProps {
   readonly name: string;
   readonly providerEndpoint: string;
@@ -25,7 +29,7 @@ export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
 
     // 👇 Create random 8 length string
     const random: string = crypto.createHash('shake256', { outputLength: 4 })
-      .update(cdk.Names.uniqueId(scope))
+      .update(`${cdk.Names.uniqueId(scope)}.${props.name}.${props.providerEndpoint}.${props.providerType}`)
       .digest('hex');
 
     const account = cdk.Stack.of(scope).account;
@@ -89,4 +93,9 @@ export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
       },
     });
   }
+
+  getHostArn(): string {
+    return this.getResponseField(ResponseField.HostArn);
+  }
+
 }
