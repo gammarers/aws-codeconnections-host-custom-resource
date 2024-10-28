@@ -37,7 +37,7 @@ const codeConnectionsHostCustomResource = new CodeConnectionsHostCustomResource(
 });
 
 // get host arn
-const hostArn = codeConnectionsHostCustomResource.getResponseField('HostArn');
+const hostArn = gitLabSelfManagedConnectionHostCustomResource.findHostArn();
 
 new codeconnections.CfnConnection(this, 'Connection', {
   connectionName: 'example-gitlab-connection',
