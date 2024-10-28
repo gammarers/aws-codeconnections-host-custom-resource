@@ -17,10 +17,11 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
       "Properties": {
         "Code": {
           "S3Bucket": "cdk-hnb659fds-assets-123456789012-us-east-1",
-          "S3Key": "17c16a3854838fd3ff4bda08146122a6701f33b9c86ae17f415ad0dc47a97544.zip",
+          "S3Key": "97f30e67419a1676a2215492723e5add1aa491caf0cbe2dd878fc4fab0468cd4.zip",
         },
-        "FunctionName": "custom-resource-codeconnection-host-eadb0d58-func",
+        "FunctionName": "custom-resource-codeconnection-host-ede7e92c-func",
         "Handler": "index.handler",
+        "MemorySize": 512,
         "Role": {
           "Fn::GetAtt": [
             "FunctionRole111A5701",
@@ -31,6 +32,18 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
         "Timeout": 15,
       },
       "Type": "AWS::Lambda::Function",
+    },
+    "Connection": {
+      "Properties": {
+        "ConnectionName": "example-gitlab-self-managed-connection",
+        "HostArn": {
+          "Fn::GetAtt": [
+            "GitLabSelfManagedCodeConnectionsHostCustomResource31CD67FB",
+            "HostArn",
+          ],
+        },
+      },
+      "Type": "AWS::CodeConnections::Connection",
     },
     "FunctionRole111A5701": {
       "Properties": {
@@ -80,7 +93,7 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
             "PolicyName": "CustomResourcePolicy",
           },
         ],
-        "RoleName": "custom-resource-codeconnection-host-eadb0d58-func-exc-role",
+        "RoleName": "custom-resource-codeconnection-host-ede7e92c-func-exc-role",
       },
       "Type": "AWS::IAM::Role",
     },
