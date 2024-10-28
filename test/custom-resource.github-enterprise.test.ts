@@ -20,7 +20,7 @@ describe('CustomResource Testing', () => {
     providerType: CodeConnectionsHostProviderType.GIT_HUB_ENTERPRISE_SERVER,
   });
 
-  const hostArn = gitHubEnterpriseConnectionHostCustomResource.getHostArn();
+  const hostArn = gitHubEnterpriseConnectionHostCustomResource.findHostArn();
 
   new codeconnections.CfnConnection(stack, 'Connection', {
     connectionName: 'example-github-enterprise-connection',

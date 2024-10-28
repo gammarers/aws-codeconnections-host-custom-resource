@@ -20,7 +20,7 @@ describe('CustomResource Testing', () => {
     providerType: CodeConnectionsHostProviderType.GIT_LAB,
   });
 
-  const hostArn = gitLabConnectionHostCustomResource.getHostArn();
+  const hostArn = gitLabConnectionHostCustomResource.findHostArn();
 
   new codeconnections.CfnConnection(stack, 'Connection', {
     connectionName: 'example-gitlab-connection',

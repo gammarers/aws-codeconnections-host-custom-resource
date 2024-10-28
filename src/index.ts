@@ -14,7 +14,7 @@ export enum CodeConnectionsHostProviderType {
 }
 
 export enum ResponseField {
-  HostArn = 'HostArn',
+  HOST_ARN = 'HostArn',
 }
 
 export interface CodeConnectionsHostCustomResourceProps {
@@ -94,8 +94,8 @@ export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
     });
   }
 
-  getHostArn(): string {
-    return this.getResponseField(ResponseField.HostArn);
+  findHostArn(): string {
+    return this.getResponseField(ResponseField.HOST_ARN);
   }
 
 }

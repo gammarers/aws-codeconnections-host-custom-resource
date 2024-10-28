@@ -20,7 +20,7 @@ describe('CustomResource Testing', () => {
     providerType: CodeConnectionsHostProviderType.BIT_BUCKET,
   });
 
-  const hostArn = bitbucketConnectionHostCustomResource.getHostArn();
+  const hostArn = bitbucketConnectionHostCustomResource.findHostArn();
 
   new codeconnections.CfnConnection(stack, 'Connection', {
     connectionName: 'example-bitbucket-connection',
