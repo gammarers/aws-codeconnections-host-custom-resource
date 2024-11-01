@@ -23,5 +23,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['yicr'],
   },
+  publishToPypi: {
+    distName: 'gammarers.aws-codeconnections-host-custom-resource',
+    module: 'gammarers.aws_codeconnections_host_custom_resource',
+  },
 });
 project.synth();

@@ -25,6 +25,14 @@ npm install @gammarers/aws-codeconnections-host-custom-resource
 yarn add @gammarers/aws-codeconnections-host-custom-resource
 ```
 
+### Python
+
+#### install by pip
+
+```shell
+pip install gammarers.aws-budgets-notification
+```
+
 ## Example
 
 ```typescript
