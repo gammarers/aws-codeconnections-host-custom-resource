@@ -62,6 +62,9 @@
     "aws-cdk-lib": "^2.145.0",
     "constructs": "^10.0.5"
   },
+  "dependencies": {
+    "@gammarers/aws-resource-naming": "^0.6.0"
+  },
   "keywords": [
     "cdk"
   ],
