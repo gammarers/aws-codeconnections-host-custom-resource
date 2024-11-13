@@ -208,6 +208,7 @@ const codeConnectionsHostCustomResourceProps: CodeConnectionsHostCustomResourceP
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.providerEndpoint">providerEndpoint</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.providerType">providerType</a></code> | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType">CodeConnectionsHostProviderType</a></code> | *No description.* |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.resouceNamingOption">resouceNamingOption</a></code> | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CustomNaming">CustomNaming</a> \| @gammarers/aws-resource-naming.ResourceDefaultNaming \| @gammarers/aws-resource-naming.ResourceAutoNaming</code> | *No description.* |
 
 ---
 
@@ -238,6 +239,66 @@ public readonly providerType: CodeConnectionsHostProviderType;
 ```
 
 - *Type:* <a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType">CodeConnectionsHostProviderType</a>
+
+---
+
+##### `resouceNamingOption`<sup>Optional</sup> <a name="resouceNamingOption" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.resouceNamingOption"></a>
+
+```typescript
+public readonly resouceNamingOption: CustomNaming | ResourceDefaultNaming | ResourceAutoNaming;
+```
+
+- *Type:* <a href="#@gammarers/aws-codeconnections-host-custom-resource.CustomNaming">CustomNaming</a> | @gammarers/aws-resource-naming.ResourceDefaultNaming | @gammarers/aws-resource-naming.ResourceAutoNaming
+
+---
+
+### CustomNaming <a name="CustomNaming" id="@gammarers/aws-codeconnections-host-custom-resource.CustomNaming"></a>
+
+#### Initializer <a name="Initializer" id="@gammarers/aws-codeconnections-host-custom-resource.CustomNaming.Initializer"></a>
+
+```typescript
+import { CustomNaming } from '@gammarers/aws-codeconnections-host-custom-resource'
+
+const customNaming: CustomNaming = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CustomNaming.property.functionName">functionName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CustomNaming.property.functionRoleName">functionRoleName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CustomNaming.property.type">type</a></code> | <code>@gammarers/aws-resource-naming.ResourceNamingType</code> | *No description.* |
+
+---
+
+##### `functionName`<sup>Required</sup> <a name="functionName" id="@gammarers/aws-codeconnections-host-custom-resource.CustomNaming.property.functionName"></a>
+
+```typescript
+public readonly functionName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `functionRoleName`<sup>Required</sup> <a name="functionRoleName" id="@gammarers/aws-codeconnections-host-custom-resource.CustomNaming.property.functionRoleName"></a>
+
+```typescript
+public readonly functionRoleName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@gammarers/aws-codeconnections-host-custom-resource.CustomNaming.property.type"></a>
+
+```typescript
+public readonly type: ResourceNamingType;
+```
+
+- *Type:* @gammarers/aws-resource-naming.ResourceNamingType
 
 ---
 
