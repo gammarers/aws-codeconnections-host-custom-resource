@@ -1,4 +1,4 @@
-import { ResourceNaming } from '@gammarers/aws-resource-naming';
+import { ResourceNamingType } from '@gammarers/aws-resource-naming';
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import * as codeconnections from 'aws-cdk-lib/aws-codeconnections';
@@ -20,9 +20,7 @@ describe('CustomResource Testing', () => {
     providerEndpoint: 'https://bitbucket.example.com',
     providerType: CodeConnectionsHostProviderType.BIT_BUCKET,
     resouceNamingOption: {
-      naming: {
-        type: ResourceNaming.NamingType.AUTO,
-      },
+      type: ResourceNamingType.AUTO,
     },
   });
 
