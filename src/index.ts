@@ -76,7 +76,7 @@ export interface CodeConnectionsHostCustomResourceProps {
   readonly providerType: CodeConnectionsHostProviderType;
   //readonly resouceNamingOption?: ResourceNamingOptions;
   //  readonly resouceNamingOption?: { type: ResourceNaming.NamingType.DEFAULT } | { type: ResourceNaming.NamingType.AUTO } | CustomNaming;
-  readonly resouceNamingOption?: ResourceNamingOption;
+  readonly resourceNamingOption?: ResourceNamingOption;
 }
 
 export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
@@ -89,7 +89,7 @@ export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
       functionName: `custom-resource-codeconnection-host-${random}-func`,
       functionRoleName: `custom-resource-codeconnection-host-${random}-func-exc-role`,
     };
-    const names = ResourceNaming.naming(autoNaming, props.resouceNamingOption as ResourceNamingOptions);
+    const names = ResourceNaming.naming(autoNaming, props.resourceNamingOption as ResourceNamingOptions);
     //    const naming = {
     //      names: autoNaming,
     //    };

@@ -208,7 +208,7 @@ const codeConnectionsHostCustomResourceProps: CodeConnectionsHostCustomResourceP
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.providerEndpoint">providerEndpoint</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.providerType">providerType</a></code> | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostProviderType">CodeConnectionsHostProviderType</a></code> | *No description.* |
-| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.resouceNamingOption">resouceNamingOption</a></code> | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CustomNaming">CustomNaming</a> \| @gammarers/aws-resource-naming.ResourceDefaultNaming \| @gammarers/aws-resource-naming.ResourceAutoNaming</code> | *No description.* |
+| <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.resourceNamingOption">resourceNamingOption</a></code> | <code><a href="#@gammarers/aws-codeconnections-host-custom-resource.CustomNaming">CustomNaming</a> \| @gammarers/aws-resource-naming.ResourceDefaultNaming \| @gammarers/aws-resource-naming.ResourceAutoNaming</code> | *No description.* |
 
 ---
 
@@ -242,10 +242,10 @@ public readonly providerType: CodeConnectionsHostProviderType;
 
 ---
 
-##### `resouceNamingOption`<sup>Optional</sup> <a name="resouceNamingOption" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.resouceNamingOption"></a>
+##### `resourceNamingOption`<sup>Optional</sup> <a name="resourceNamingOption" id="@gammarers/aws-codeconnections-host-custom-resource.CodeConnectionsHostCustomResourceProps.property.resourceNamingOption"></a>
 
 ```typescript
-public readonly resouceNamingOption: CustomNaming | ResourceDefaultNaming | ResourceAutoNaming;
+public readonly resourceNamingOption: CustomNaming | ResourceDefaultNaming | ResourceAutoNaming;
 ```
 
 - *Type:* <a href="#@gammarers/aws-codeconnections-host-custom-resource.CustomNaming">CustomNaming</a> | @gammarers/aws-resource-naming.ResourceDefaultNaming | @gammarers/aws-resource-naming.ResourceAutoNaming

@@ -19,7 +19,7 @@ describe('CustomResource Testing', () => {
     name: 'bitbucket.example.com',
     providerEndpoint: 'https://bitbucket.example.com',
     providerType: CodeConnectionsHostProviderType.BIT_BUCKET,
-    resouceNamingOption: {
+    resourceNamingOption: {
       type: ResourceNamingType.AUTO,
     },
   });
