@@ -1,4 +1,4 @@
-import * as crypto from 'crypto';
+import { ResourceAutoNaming, ResourceDefaultNaming, ResourceNaming, ResourceNamingOptions, ResourceNamingType } from '@gammarers/aws-resource-naming';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cr from 'aws-cdk-lib/custom-resources';
@@ -17,10 +17,66 @@ export enum ResponseField {
   HOST_ARN = 'HostArn',
 }
 
+//export type Names = {
+//  functionName: string;
+//  functionRoleName: string;
+//}
+//export interface Names {
+//  readonly functionName: string;
+//  readonly functionRoleName: string;
+//}
+//
+//export type CustomNaming = {
+//  type: ResourceNaming.NamingType.CUSTOM;
+//  //  functionName: string;
+//  //  functionRoleName: string;
+//  names: Names;
+//}
+
+//export interface ResourceNamingOptions {
+//  readonly naming: ResourceNaming.AutoNaming | ResourceNaming.DefaultNaming | {
+//    type: ResourceNaming.NamingType.CUSTOM;
+//    names: {
+//      functionName: string;
+//      functionRoleName: string;
+//    };
+//  };
+//}
+
+//export interface ResourceNamingOptions {
+//  readonly naming: ResourceNaming.AutoNaming | ResourceNaming.DefaultNaming;
+//}
+//export type Naming = { type: ResourceNaming.NamingType.DEFAULT } | { type: ResourceNaming.NamingType.AUTO } | CustomNaming;
+//export type Naming = { type: ResourceNaming.NamingType.DEFAULT } | { type: ResourceNaming.NamingType.AUTO } | CustomNaming;
+//export type Naming = CustomNaming;
+
+//export interface ResourceNamingOptions {
+//  readonly naming: Naming;
+//}
+//export interface DefaultNamingOption {
+//  readonly type: ResourceNaming.NamingType.DEFAULT;
+//}
+//
+//export interface AutoNamingOption {
+//  readonly type: ResourceNaming.NamingType.AUTO;
+//}
+
+export interface CustomNaming {
+  readonly type: ResourceNamingType.CUSTOM;
+  // readonly names: Names; // CUSTOM の場合に必須
+  readonly functionName: string; // フラット化
+  readonly functionRoleName: string; // フラット化
+}
+
+export type ResourceNamingOption = ResourceDefaultNaming | ResourceAutoNaming | CustomNaming;
+
 export interface CodeConnectionsHostCustomResourceProps {
   readonly name: string;
   readonly providerEndpoint: string;
   readonly providerType: CodeConnectionsHostProviderType;
+  //readonly resouceNamingOption?: ResourceNamingOptions;
+  //  readonly resouceNamingOption?: { type: ResourceNaming.NamingType.DEFAULT } | { type: ResourceNaming.NamingType.AUTO } | CustomNaming;
+  readonly resouceNamingOption?: ResourceNamingOption;
 }
 
 export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
@@ -28,15 +84,21 @@ export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
   constructor(scope: Construct, id: string, props: CodeConnectionsHostCustomResourceProps) {
 
     // 👇 Create random 8 length string
-    const random: string = crypto.createHash('shake256', { outputLength: 4 })
-      .update(`${cdk.Names.uniqueId(scope)}.${props.name}.${props.providerEndpoint}.${props.providerType}`)
-      .digest('hex');
+    const random = ResourceNaming.createRandomString(`${cdk.Names.uniqueId(scope)}.${props.name}.${props.providerEndpoint}.${props.providerType}`);
+    const autoNaming = {
+      functionName: `custom-resource-codeconnection-host-${random}-func`,
+      functionRoleName: `custom-resource-codeconnection-host-${random}-func-exc-role`,
+    };
+    const names = ResourceNaming.naming(autoNaming, props.resouceNamingOption as ResourceNamingOptions);
+    //    const naming = {
+    //      names: autoNaming,
+    //    };
 
     const account = cdk.Stack.of(scope).account;
     const region = cdk.Stack.of(scope).region;
 
     const functionRole = new iam.Role(scope, 'FunctionRole', {
-      roleName: `custom-resource-codeconnection-host-${random}-func-exc-role`,
+      roleName: names.functionRoleName,
       description: 'Custom Resource Function Execution Role.',
       assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
       managedPolicies: [
@@ -62,10 +124,11 @@ export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
     });
 
     super(scope, id, {
-      functionName: `custom-resource-codeconnection-host-${random}-func`,
+      functionName: names.functionName,
       role: functionRole,
       timeout: cdk.Duration.seconds(15),
       installLatestAwsSdk: true,
+      //logGroup: todo
       onCreate: {
         service: 'CodeConnections',
         action: 'createHost',

@@ -92,6 +92,11 @@
       "type": "build"
     },
     {
+      "name": "@gammarers/aws-resource-naming",
+      "version": "^0.8.0",
+      "type": "peer"
+    },
+    {
       "name": "aws-cdk-lib",
       "version": "^2.145.0",
       "type": "peer"

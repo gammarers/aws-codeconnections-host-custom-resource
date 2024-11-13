@@ -32,12 +32,29 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
       },
       "Type": "AWS::Lambda::Function",
     },
+    "BitBucketCodeConnectionsHostCustomResource983A9F6A": {
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "Create": "{"service":"CodeConnections","action":"createHost","parameters":{"Name":"bitbucket.example.com","ProviderEndpoint":"https://bitbucket.example.com","ProviderType":"Bitbucket"},"physicalResourceId":{"responsePath":"HostArn"}}",
+        "Delete": "{"service":"CodeConnections","action":"deleteHost","parameters":{"HostArn":"PHYSICAL:RESOURCEID:"}}",
+        "InstallLatestAwsSdk": true,
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "Arn",
+          ],
+        },
+        "Update": "{"service":"CodeConnections","action":"updateHost","parameters":{"HostArn":"PHYSICAL:RESOURCEID:","ProviderEndpoint":"https://bitbucket.example.com"}}",
+      },
+      "Type": "Custom::AWS",
+      "UpdateReplacePolicy": "Delete",
+    },
     "Connection": {
       "Properties": {
-        "ConnectionName": "example-github-enterprise-connection",
+        "ConnectionName": "example-bitbucket-connection",
         "HostArn": {
           "Fn::GetAtt": [
-            "GitHibEnterpriseCodeConnectionsHostCustomResource3C231391",
+            "BitBucketCodeConnectionsHostCustomResource983A9F6A",
             "HostArn",
           ],
         },
@@ -94,23 +111,6 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
         ],
       },
       "Type": "AWS::IAM::Role",
-    },
-    "GitHibEnterpriseCodeConnectionsHostCustomResource3C231391": {
-      "DeletionPolicy": "Delete",
-      "Properties": {
-        "Create": "{"service":"CodeConnections","action":"createHost","parameters":{"Name":"github.example.com","ProviderEndpoint":"https://github.example.com","ProviderType":"GitHubEnterpriseServer"},"physicalResourceId":{"responsePath":"HostArn"}}",
-        "Delete": "{"service":"CodeConnections","action":"deleteHost","parameters":{"HostArn":"PHYSICAL:RESOURCEID:"}}",
-        "InstallLatestAwsSdk": true,
-        "ServiceToken": {
-          "Fn::GetAtt": [
-            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
-            "Arn",
-          ],
-        },
-        "Update": "{"service":"CodeConnections","action":"updateHost","parameters":{"HostArn":"PHYSICAL:RESOURCEID:","ProviderEndpoint":"https://github.example.com"}}",
-      },
-      "Type": "Custom::AWS",
-      "UpdateReplacePolicy": "Delete",
     },
   },
   "Rules": {
