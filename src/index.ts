@@ -4,6 +4,8 @@ import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cr from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
 
+export { ResourceAutoNaming, ResourceDefaultNaming, ResourceNamingOptions, ResourceNamingType };
+
 // Bitbucket | GitHub | GitHubEnterpriseServer | GitLab | GitLabSelfManaged
 export enum CodeConnectionsHostProviderType {
   BIT_BUCKET = 'Bitbucket',
