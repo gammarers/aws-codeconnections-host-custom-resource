@@ -10,10 +10,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   projenrcTs: true,
   repositoryUrl: 'https://github.com/gammarers/aws-codeconnections-host-custom-resource.git',
   deps: [
-    '@gammarers/aws-resource-naming@0.8.0',
-  ],
-  devDeps: [
-    '@gammarers/aws-resource-naming@0.8.0',
+    '@gammarers/aws-resource-naming@^0.8.0',
   ],
   peerDeps: [
     '@gammarers/aws-resource-naming@^0.8.0',

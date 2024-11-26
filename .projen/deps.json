@@ -1,11 +1,6 @@
 {
   "dependencies": [
     {
-      "name": "@gammarers/aws-resource-naming",
-      "version": "0.8.0",
-      "type": "build"
-    },
-    {
       "name": "@stylistic/eslint-plugin",
       "version": "^2",
       "type": "build"
@@ -113,7 +108,7 @@
     },
     {
       "name": "@gammarers/aws-resource-naming",
-      "version": "0.8.0",
+      "version": "^0.8.0",
       "type": "runtime"
     }
   ],

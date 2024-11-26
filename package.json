@@ -35,7 +35,6 @@
     "organization": false
   },
   "devDependencies": {
-    "@gammarers/aws-resource-naming": "0.8.0",
     "@stylistic/eslint-plugin": "^2",
     "@types/jest": "^29.5.14",
     "@types/node": "^18",
@@ -65,7 +64,7 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@gammarers/aws-resource-naming": "0.8.0"
+    "@gammarers/aws-resource-naming": "^0.8.0"
   },
   "keywords": [
     "cdk"
