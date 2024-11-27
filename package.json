@@ -59,12 +59,12 @@
     "typescript": "5.5.x"
   },
   "peerDependencies": {
-    "@gammarers/aws-resource-naming": "^0.8.0",
+    "@gammarers/aws-resource-naming": "^0.10.1",
     "aws-cdk-lib": "^2.145.0",
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@gammarers/aws-resource-naming": "^0.8.0"
+    "@gammarers/aws-resource-naming": "^0.10.1"
   },
   "keywords": [
     "cdk"

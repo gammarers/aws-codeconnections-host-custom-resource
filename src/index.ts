@@ -1,10 +1,10 @@
-import { ResourceAutoNaming, ResourceDefaultNaming, ResourceNaming, ResourceNamingOptions, ResourceNamingType } from '@gammarers/aws-resource-naming';
+import { ResourceAutoNaming, ResourceDefaultNaming, ResourceNaming, ResourceNamingType } from '@gammarers/aws-resource-naming';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cr from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
 
-export { ResourceAutoNaming, ResourceDefaultNaming, ResourceNamingOptions, ResourceNamingType };
+export { ResourceAutoNaming, ResourceDefaultNaming, ResourceNamingType };
 
 // Bitbucket | GitHub | GitHubEnterpriseServer | GitLab | GitLabSelfManaged
 export enum CodeConnectionsHostProviderType {
@@ -76,8 +76,6 @@ export interface CodeConnectionsHostCustomResourceProps {
   readonly name: string;
   readonly providerEndpoint: string;
   readonly providerType: CodeConnectionsHostProviderType;
-  //readonly resouceNamingOption?: ResourceNamingOptions;
-  //  readonly resouceNamingOption?: { type: ResourceNaming.NamingType.DEFAULT } | { type: ResourceNaming.NamingType.AUTO } | CustomNaming;
   readonly resourceNamingOption?: ResourceNamingOption;
 }
 
@@ -91,7 +89,7 @@ export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
       functionName: `custom-resource-codeconnection-host-${random}-func`,
       functionRoleName: `custom-resource-codeconnection-host-${random}-func-exc-role`,
     };
-    const names = ResourceNaming.naming(autoNaming, props.resourceNamingOption as ResourceNamingOptions);
+    const names = ResourceNaming.naming(autoNaming, props.resourceNamingOption as ResourceNaming.ResourceNamingOption);
     //    const naming = {
     //      names: autoNaming,
     //    };
