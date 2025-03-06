@@ -1,10 +1,15 @@
-import { ResourceAutoNaming, ResourceDefaultNaming, ResourceNaming, ResourceNamingType } from '@gammarers/aws-resource-naming';
+import {
+  ResourceAutoNaming,
+  ResourceDefaultNaming,
+  ResourceNaming,
+  ResourceNamingType as CodeConnectionsHostCustomResourceResourceNamingType,
+} from '@gammarers/aws-resource-naming';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cr from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
 
-export { ResourceAutoNaming, ResourceDefaultNaming, ResourceNamingType };
+export { CodeConnectionsHostCustomResourceResourceNamingType };
 
 // Bitbucket | GitHub | GitHubEnterpriseServer | GitLab | GitLabSelfManaged
 export enum CodeConnectionsHostProviderType {
@@ -64,7 +69,7 @@ export enum ResponseField {
 //}
 
 export interface CustomNaming {
-  readonly type: ResourceNamingType.CUSTOM;
+  readonly type: CodeConnectionsHostCustomResourceResourceNamingType.CUSTOM;
   // readonly names: Names; // CUSTOM の場合に必須
   readonly functionName: string; // フラット化
   readonly functionRoleName: string; // フラット化
