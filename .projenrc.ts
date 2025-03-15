@@ -7,6 +7,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   typescriptVersion: '5.5.x',
   jsiiVersion: '5.5.x',
   name: '@gammarers/aws-codeconnections-host-custom-resource',
+  description: 'This AWS CDK Construct provides a custom resource (Lambda Function) to create a connection host for Self-Managed GitLab, which is not yet supported by CloudFormation. Additionally, even after creating the Host and the connection, authentication must be done via a browser.',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/gammarers/aws-codeconnections-host-custom-resource.git',
   deps: [
