@@ -17,7 +17,7 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
       "Properties": {
         "Code": {
           "S3Bucket": "cdk-hnb659fds-assets-123456789012-us-east-1",
-          "S3Key": "97f30e67419a1676a2215492723e5add1aa491caf0cbe2dd878fc4fab0468cd4.zip",
+          "S3Key": "9d043014be736e8162bcc7ec5590cc6d2ff24fd0d9c73a5c5d595151c5fdad00.zip",
         },
         "Handler": "index.handler",
         "MemorySize": 512,
@@ -27,7 +27,7 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
             "Arn",
           ],
         },
-        "Runtime": "nodejs18.x",
+        "Runtime": "nodejs20.x",
         "Timeout": 15,
       },
       "Type": "AWS::Lambda::Function",
