@@ -28,7 +28,7 @@ exports[`CustomResource Testing Should match snapshot 1`] = `
           ],
         },
         "Runtime": "nodejs20.x",
-        "Timeout": 15,
+        "Timeout": 120,
       },
       "Type": "AWS::Lambda::Function",
     },
