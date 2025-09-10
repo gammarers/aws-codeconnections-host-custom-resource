@@ -131,7 +131,7 @@ export class CodeConnectionsHostCustomResource extends cr.AwsCustomResource {
     super(scope, id, {
       functionName: names.functionName,
       role: functionRole,
-      timeout: cdk.Duration.seconds(15),
+      timeout: cdk.Duration.minutes(2),
       installLatestAwsSdk: true,
       //logGroup: todo
       onCreate: {
